@@ -1,7 +1,7 @@
 package com.meli.clima.service;
 
 import com.meli.clima.model.*;
-import com.meli.clima.repository.DiaRepository;
+import com.meli.clima.repository.PronosticoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import java.util.ArrayList;
 @Service
 public class PronosticadorVulcano implements Pronosticador {
 
-    private final DiaRepository diaRepository;
+    private final PronosticoRepository pronosticoRepository;
     private final GeometriaService geometriaService;
 
-    public PronosticadorVulcano(GeometriaService geometriaService, DiaRepository diaRepository) {
-        this.diaRepository = diaRepository;
+    public PronosticadorVulcano(GeometriaService geometriaService, PronosticoRepository pronosticoRepository) {
+        this.pronosticoRepository = pronosticoRepository;
         this.geometriaService = geometriaService;
     }
 
@@ -76,12 +76,4 @@ public class PronosticadorVulcano implements Pronosticador {
         return planetasAlineados && !planetasAlineadosAlSol;
     }
 
-    //TODO SACAR ESTO DE ACA
-    public void generarPronostico(SistemaSolar sistemaSolar, Integer anios) {
-        int cantidadDias = 365 * anios;
-        for (int i=0; i < cantidadDias; i++) {
-            Pronostico pronostico = pronosticarClima(sistemaSolar, i);
-            diaRepository.save(pronostico);
-        }
-    }
 }

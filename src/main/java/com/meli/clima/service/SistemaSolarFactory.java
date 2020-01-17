@@ -1,7 +1,13 @@
-package com.meli.clima.model;
+package com.meli.clima.service;
+
+import com.meli.clima.model.Coordenadas;
+import com.meli.clima.model.Planeta;
+import com.meli.clima.model.SistemaSolar;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class SistemaSolarFactory {
     public static SistemaSolar getSistemaSolarStarTrek() {
         ArrayList planetas = new ArrayList();

@@ -106,7 +106,7 @@ public class PronosticadorVulcanoTests {
         Pronostico pronostico = pronosticadorVulcano.pronosticarClima(sistemaSolar, 1);
 
         assertEquals(pronostico.getClima(), Clima.SEQUIA);
-        assertEquals(pronostico.getNumero(), 1);
+        assertEquals(pronostico.getDia(), 1);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class PronosticadorVulcanoTests {
         Pronostico pronostico = pronosticadorVulcano.pronosticarClima(sistemaSolar, 1);
 
         assertEquals(pronostico.getClima(), Clima.LLUVIA);
-        assertEquals(pronostico.getNumero(), 1);
+        assertEquals(pronostico.getDia(), 1);
     }
 
     @Test
@@ -134,7 +134,7 @@ public class PronosticadorVulcanoTests {
         Pronostico pronostico = pronosticadorVulcano.pronosticarClima(sistemaSolar, 1);
 
         assertEquals(pronostico.getClima(), Clima.OPTIMO);
-        assertEquals(pronostico.getNumero(), 1);
+        assertEquals(pronostico.getDia(), 1);
     }
 
     @Test

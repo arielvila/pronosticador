@@ -2,11 +2,11 @@ package com.meli.clima.response;
 
 import com.meli.clima.model.Clima;
 
-public class DiaResponse {
+public class PronosticoDiaResponse {
     private Integer dia;
     private Clima clima;
 
-    public DiaResponse(Integer dia, Clima clima) {
+    public PronosticoDiaResponse(Integer dia, Clima clima) {
         this.dia = dia;
         this.clima = clima;
     }
@@ -15,15 +15,7 @@ public class DiaResponse {
         return dia;
     }
 
-    public void setDia(Integer dia) {
-        this.dia = dia;
-    }
-
     public Clima getClima() {
         return clima;
-    }
-
-    public void setClima(Clima clima) {
-        this.clima = clima;
     }
 }

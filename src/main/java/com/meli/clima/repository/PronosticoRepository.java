@@ -10,10 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface DiaRepository extends CrudRepository<Pronostico, Integer> {
+public interface PronosticoRepository extends CrudRepository<Pronostico, Integer> {
     Integer countAllByClima(Clima clima);
-    Optional<Pronostico> findByNumero(Integer numeroDia);
 
-    @Query(nativeQuery = true, value ="SELECT numero FROM dia WHERE intensidad_lluvia = (SELECT MAX(intensidad_lluvia) FROM dia)")
+    Optional<Pronostico> findByDia(Integer dia);
+
+    @Query(nativeQuery = true, value ="SELECT MAX(dia) FROM pronostico")
+    Optional<Integer> findUltimoDia();
+
+    @Query(nativeQuery = true, value ="SELECT dia FROM pronostico WHERE intensidad_lluvia = (SELECT MAX(intensidad_lluvia) FROM pronostico)")
     List<Integer> findDiasLluviasMasIntensas();
 }
