@@ -27,10 +27,17 @@ public class GeometriaService {
         return false;
     }
 
+    /**
+     * Retorna la orientacion del triangulo formado. Si es 0, estan alineados
+     *
+     * @param coordenadas1
+     * @param coordenadas2
+     * @param coordenadas3
+     * @return orientacion
+     */
     private Double calcularOrientacionEntrePuntos(Coordenadas coordenadas1, Coordenadas coordenadas2, Coordenadas coordenadas3) {
         return (coordenadas1.getX() - coordenadas3.getX()) * (coordenadas2.getY() - coordenadas3.getY()) - (coordenadas1.getY() - coordenadas3.getY()) * (coordenadas2.getX() - coordenadas3.getX());
     }
-
 
     public Double calcularPerimetroTriangulo(Coordenadas coordenadas1, Coordenadas coordenadas2, Coordenadas coordenadas3) {
         Double lado12 = calcularDistanciaDosPuntos(coordenadas1, coordenadas2);

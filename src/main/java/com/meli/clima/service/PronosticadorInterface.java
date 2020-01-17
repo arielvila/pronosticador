@@ -3,7 +3,7 @@ package com.meli.clima.service;
 import com.meli.clima.model.Pronostico;
 import com.meli.clima.model.SistemaSolar;
 
-public interface Pronosticador {
+public interface PronosticadorInterface {
     Pronostico pronosticarClima(SistemaSolar sistemaSolar, Integer dia);
     Boolean haySequia(SistemaSolar sistemaSolar);
     Boolean hayLluvia(SistemaSolar sistemaSolar);

@@ -27,7 +27,6 @@ public class SwaggerConfig {
     private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Pronosticador API REST")
                 .description("Pronosticador de clima de sistema solar Star Trek API REST")
-              //  .contact(new Contact("Ariel Vila", "www.javaguides.net", "ramesh24fadatare@gmail.com"))
                 .version("1.0.0")
                 .build();
     }

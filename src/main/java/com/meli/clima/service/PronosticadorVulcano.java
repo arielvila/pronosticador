@@ -1,19 +1,16 @@
 package com.meli.clima.service;
 
 import com.meli.clima.model.*;
-import com.meli.clima.repository.PronosticoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 @Service
-public class PronosticadorVulcano implements Pronosticador {
+public class PronosticadorVulcano implements PronosticadorInterface {
 
-    private final PronosticoRepository pronosticoRepository;
     private final GeometriaService geometriaService;
 
-    public PronosticadorVulcano(GeometriaService geometriaService, PronosticoRepository pronosticoRepository) {
-        this.pronosticoRepository = pronosticoRepository;
+    public PronosticadorVulcano(GeometriaService geometriaService) {
         this.geometriaService = geometriaService;
     }
 
